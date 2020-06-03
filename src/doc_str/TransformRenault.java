@@ -40,24 +40,15 @@ public static String Parcour_rec(Node node){
 	}
 
 
-public static boolean Filter(Node node){
-	
-	return (node.getNodeName().matches("#text")
-			&& 
-		   (!node.getNodeValue().matches("(\n|\t| )*"))
-	);
-}
+
 
 	
 	
-
-	@Override
-	public Document transformer(Document document_src)throws Exception {
+    @Override
+	public Document transformer(Document document_src, Document document_but)throws Exception {
 		
-		DOMImplementation domimp = CreateDomParser.imp();
-		Document document_but = domimp.createDocument(null,"Concessionnaires", null);
+		
 		Element rac_but= document_but.getDocumentElement();
-		
 		
 		NodeList infos = document_src.getElementsByTagName("p");
 		

@@ -48,9 +48,7 @@ public class Main {
                 	
                 	files.add(fils.getName());
                 }
-                
-               
-                
+    
             }
         } else {
             System.err.println("Nom de repertoire invalide");
@@ -59,17 +57,6 @@ public class Main {
 		
 	}
 	
-	public static boolean Filter(Node node){
-		
-		return (node.getNodeName().matches("#text")
-				&& 
-			   (!node.getNodeValue().matches("(\n|\t| )*"))
-		);
-	}
-	
-	
-	
-	
 	
 
 	public static void main(String[] args) throws Exception {
@@ -77,7 +64,7 @@ public class Main {
 
 		
 		String xmlFile = args[0];
-		Transform T = new TransformRenault(xmlFile);
+		Transform T = new TransformM457(xmlFile);
 		T.generate();
 
 		
