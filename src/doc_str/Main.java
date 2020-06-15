@@ -20,10 +20,6 @@ import org.w3c.dom.Node;
 
 public class Main {
 	
-	
-	
-
-	
 	private static ArrayList<String> files = new ArrayList();
 	
 	
@@ -46,7 +42,7 @@ public class Main {
                 }
                 else{
                 	
-                	files.add(fils.getName());
+                	files.add(new_path);
                 }
     
             }
@@ -61,14 +57,10 @@ public class Main {
 
 	public static void main(String[] args) throws Exception {
 		
-
+		parcour(args[0]);
+		Transform_files T = new Transform_files(files);
+		T.transform_files();
 		
-		String xmlFile = args[0];
-		Transform T = new TransformM457(xmlFile);
-		T.generate();
-
-		
-
 	}
 	
 

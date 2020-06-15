@@ -2,6 +2,7 @@ package doc_str;
 
 import org.w3c.dom.DOMImplementation;
 import org.w3c.dom.Document;
+import org.w3c.dom.DocumentType;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -72,7 +73,7 @@ public static String Parcour_rec(Node node){
 							
 							ch=Parcour_rec(child);
 					
-							contenu+=ch.replaceAll("(\n|\t| |:)*","");
+							contenu+=ch.replaceAll("(\n|\t|:)*","");
 							contenu+="\n";
 						}
 						
@@ -80,14 +81,14 @@ public static String Parcour_rec(Node node){
 							
 							if(Filter(child)){
 								
-								contenu+=childs.item(j).getNodeValue().replaceAll("(\n|\t| |:)*","");
+								contenu+=childs.item(j).getNodeValue().replaceAll("(\n|\t|:)*","");
 								contenu+="\n";
 							}
 							
 						}
 				}
 				
-				System.out.println(contenu);
+			
 				String[] info=contenu.split("\n");
 				
 				Element texte = document_but.createElement("Nom");
@@ -108,6 +109,13 @@ public static String Parcour_rec(Node node){
 		
 		return document_but;
 		}
+
+
+	@Override
+	protected DocumentType doctype(DOMImplementation domimp) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	}
 
 
